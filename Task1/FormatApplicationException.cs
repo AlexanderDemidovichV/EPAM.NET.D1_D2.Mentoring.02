@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace Task1
 {
@@ -17,11 +16,5 @@ namespace Task1
         public FormatApplicationException(string message, Exception inner) : base(message, inner)
         {
         }
-
-        protected FormatApplicationException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-        }
-
     }
 }

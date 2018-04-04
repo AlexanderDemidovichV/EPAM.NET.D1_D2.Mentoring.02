@@ -38,7 +38,10 @@ namespace Task1
                 throw new FormatApplicationException("Something went wrong... sorry(", ex);
             } catch (FormatException ex) {
                 throw new FormatApplicationException("Something went wrong... sorry(", ex);
+            } catch (Int32ParserException ex) {
+                throw new FormatApplicationException("Something went wrong... sorry(", ex);
             }
+
         }
 
         private static void Output(int[] integers)
