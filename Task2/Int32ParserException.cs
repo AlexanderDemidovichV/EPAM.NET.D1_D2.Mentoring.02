@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
 namespace Task2
 {
@@ -15,11 +14,6 @@ namespace Task2
         }
 
         public Int32ParserException(string message, Exception inner) : base(message, inner)
-        {
-        }
-
-        protected Int32ParserException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
         {
         }
     }

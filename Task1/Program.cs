@@ -11,18 +11,15 @@ namespace Task1
             Console.Write("Enter new string: ");
             string input = Console.ReadLine();
 
-            try
-            {
+            try {
                 int[] numbers = GetNumbers(input, int.Parse);
 
                 Output(numbers);
 
-                numbers = GetNumbers(input, new Int32Parser(new CustomInt32Parser()).Parse);
+                numbers = GetNumbers(input, new CustomInt32Parser().Parse);
 
                 Output(numbers);
-            }
-            catch (FormatApplicationException ex)
-            {
+            } catch (FormatApplicationException ex) {
                 Console.WriteLine(ex.Message);
             }
 
@@ -31,22 +28,15 @@ namespace Task1
 
         private static int[] GetNumbers(string inputString, Func<string,int> parse)
         {
-            try
-            {
+            try {
                 int[] numbers = inputString.Trim().Split(' ').Select(parse).ToArray();
 
                 return numbers;
-            }
-            catch (ArgumentNullException ex)
-            {
+            } catch (ArgumentNullException ex) {
                 throw new FormatApplicationException("Something went wrong... sorry(", ex);
-            }
-            catch (OverflowException ex)
-            {
+            } catch (OverflowException ex) {
                 throw new FormatApplicationException("Something went wrong... sorry(", ex);
-            }
-            catch (FormatException ex)
-            {
+            } catch (FormatException ex) {
                 throw new FormatApplicationException("Something went wrong... sorry(", ex);
             }
         }
